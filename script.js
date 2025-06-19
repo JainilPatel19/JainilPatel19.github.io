@@ -109,17 +109,15 @@ if (hamburger && navMenu) {
     });
 }
 
-// Navbar Background on Scroll
+// Hide entire navbar when scrolling
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = htmlElement.getAttribute('data-theme') === 'dark' 
-            ? 'rgba(26, 32, 44, 0.98)' 
-            : 'rgba(255, 255, 255, 0.98)';
+    if (window.scrollY > 100) {
+        navbar.style.opacity = '0';
+        navbar.style.transform = 'translateY(-100%)';
     } else {
-        navbar.style.background = htmlElement.getAttribute('data-theme') === 'dark' 
-            ? 'rgba(26, 32, 44, 0.95)' 
-            : 'rgba(255, 255, 255, 0.95)';
+        navbar.style.opacity = '1';
+        navbar.style.transform = 'translateY(0)';
     }
 });
 
